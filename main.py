@@ -130,37 +130,10 @@ def StudentsAndForeignLanguages():
                 else:
                     break
     NumberOfStudentsWhoKnowChinese = StudentsLanguages.count('Китайский')
-    print(sorted(set(StudentsLanguages)))
+    StudentsLanguages = sorted(set(StudentsLanguages))
+    print('Студенты знают', len(StudentsLanguages), 'языков:')
+    print(StudentsLanguages)
     print('Количество студентов, знающих китайский:', NumberOfStudentsWhoKnowChinese)
-
-
-
-
-
-    stud = {"Mikel", "Tomas", "Jo"}
-    studBase = {'name' : {'cLang' : 1, 'langs' : []}}
-    StudentsLanguages = set()
-    setOfChineseAgents = set()
-    for i in stud:
-        cLang = int(input(f"How many languages does {i} know? "))
-        studBase[i] = {}
-        studBase[i]['cLang'] = cLang
-        studBase[i]['langs'] = []
-        for x in range(cLang):
-            lang = input(f"{i} knows ").lower()
-            studBase[i]['langs'].append(lang)
-            if lang not in languages:
-                languages.add(lang)
-            if lang == "chinese":
-                setOfChineseAgents.add(i)
-        print(f"{i} knows {studBase[i]['cLang']} langs and it {sorted(studBase[i]['langs'])}")
-    print(f'{len(setOfChineseAgents)} student know chinese and it {setOfChineseAgents}')
-    print(f"all languages that students know {sorted(languages)}")
-
-
-
-
-
 ###################################################
 
 #Основная программа
